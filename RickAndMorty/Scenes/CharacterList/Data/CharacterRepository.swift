@@ -1,5 +1,6 @@
 import Foundation
 
+// Essa camada decide da onde vem os dados, e como transformálos de bytes em um modelo
 final class CharacterRepository {
     
     let service = CharacterService()

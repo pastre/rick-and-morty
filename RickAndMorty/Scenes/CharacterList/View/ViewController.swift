@@ -12,6 +12,7 @@ import UIKit
 
 // Design patterns
 
+// Essa camada faz a ponte com o UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var charactersTableView: UITableView!

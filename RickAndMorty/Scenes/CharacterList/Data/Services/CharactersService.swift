@@ -1,5 +1,6 @@
 import Foundation
 
+// Essa camada faz chamadas externas. Nesse caso, para uma API
 final class CharacterService {
     func fetchCharacters(completion: @escaping (Data) -> Void ) {
         let url = URL(string: "https://rickandmortyapi.com/api/character")!
