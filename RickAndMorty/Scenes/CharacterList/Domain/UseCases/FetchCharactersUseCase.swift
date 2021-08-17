@@ -1,8 +1,27 @@
 final class FetchCharactersUseCase {
     
-    let repository = CharacterRepository()
+    private let repository: CharacterRepositoryProtocol
     
-    func execute(completion: @escaping ([Character]) -> Void) {
-        repository.fetchCharacters(completion: completion)
+    private var characters: [Character] = []
+    
+    init(repository: CharacterRepositoryProtocol) {
+        self.repository = repository
+    }
+    
+    func execute(completion: @escaping () -> Void) {
+        repository.fetchCharacters {
+            self.characters = $0
+            completion()
+        }
+    }
+}
+
+extension FetchCharactersUseCase: AdapterDataSource {
+    func characterCount() -> Int {
+        characters.count
+    }
+    
+    func character(at indexPath: Int) -> Character {
+        characters[indexPath]
     }
 }

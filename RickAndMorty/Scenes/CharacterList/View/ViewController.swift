@@ -14,29 +14,47 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var charactersTableView: UITableView!
+    // MARK: - Inner type
     
-    let adapter = CharacterListAdapter()
-    let fetchCharactersUseCase = FetchCharactersUseCase()
+    struct UseCases {
+        let fetchCharactersUseCase: FetchCharactersUseCase
+    }
+    
+    // MARK: - Dependencies
+    
+    private let useCases: UseCases
+    private let dataSource: UITableViewDataSource
+    
+    // MARK: - Properties
+    
+    private lazy var charactersView = CharactersView(dataSource: dataSource)
+    
+    // MARK: - Initialization
+    
+    init(useCases: UseCases, dataSource: UITableViewDataSource) {
+        self.useCases = useCases
+        self.dataSource = dataSource
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Controller lifecycle
+    
+    override func loadView() {
+        self.view = charactersView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupAdapter()
         loadData()
     }
     
     func loadData() {
-        fetchCharactersUseCase.execute { characters in
-            self.updateCharacters(using: characters)
+        useCases.fetchCharactersUseCase.execute {
+            self.charactersView.updateCharacters()
         }
-    }
-    
-    func setupAdapter() {
-        charactersTableView.dataSource = adapter
-    }
-    
-    func updateCharacters(using characters: [Character]) {
-        adapter.characters = characters
-        charactersTableView.reloadData()
     }
 }

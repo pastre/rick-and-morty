@@ -1,6 +1,10 @@
 import Foundation
 
-final class CharacterService {
+protocol CharacterServiceProtocol {
+    func fetchCharacters(completion: @escaping (Data) -> Void)
+}
+
+final class CharacterService: CharacterServiceProtocol {
     func fetchCharacters(completion: @escaping (Data) -> Void ) {
         let url = URL(string: "https://rickandmortyapi.com/api/character")!
         let request = URLSession.shared.dataTask(with: url) { data, response, error in
