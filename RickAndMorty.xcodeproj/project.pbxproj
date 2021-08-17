@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B138815026CC2BD7007A14DE /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B138814F26CC2BD7007A14DE /* CharacterCell.swift */; };
+		B138815226CC2C03007A14DE /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = B138815126CC2C03007A14DE /* Response.swift */; };
+		B138815426CC2C1F007A14DE /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = B138815326CC2C1F007A14DE /* Info.swift */; };
+		B138815626CC2C37007A14DE /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = B138815526CC2C37007A14DE /* Character.swift */; };
+		B138815E26CC2DA5007A14DE /* CharacterListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B138815D26CC2DA5007A14DE /* CharacterListAdapter.swift */; };
+		B138816126CC2F25007A14DE /* CharactersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B138816026CC2F25007A14DE /* CharactersService.swift */; };
+		B138816426CC3120007A14DE /* FetchCharactersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B138816326CC3120007A14DE /* FetchCharactersUseCase.swift */; };
+		B138816626CC323B007A14DE /* CharacterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B138816526CC323B007A14DE /* CharacterRepository.swift */; };
 		B1DC417126CA8D5D006199F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DC417026CA8D5D006199F6 /* AppDelegate.swift */; };
 		B1DC417326CA8D5D006199F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DC417226CA8D5D006199F6 /* SceneDelegate.swift */; };
 		B1DC417526CA8D5D006199F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DC417426CA8D5D006199F6 /* ViewController.swift */; };
@@ -16,6 +24,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B138814F26CC2BD7007A14DE /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
+		B138815126CC2C03007A14DE /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		B138815326CC2C1F007A14DE /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
+		B138815526CC2C37007A14DE /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		B138815D26CC2DA5007A14DE /* CharacterListAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListAdapter.swift; sourceTree = "<group>"; };
+		B138816026CC2F25007A14DE /* CharactersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersService.swift; sourceTree = "<group>"; };
+		B138816326CC3120007A14DE /* FetchCharactersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCharactersUseCase.swift; sourceTree = "<group>"; };
+		B138816526CC323B007A14DE /* CharacterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRepository.swift; sourceTree = "<group>"; };
 		B1DC416D26CA8D5D006199F6 /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1DC417026CA8D5D006199F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1DC417226CA8D5D006199F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +53,78 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B138815726CC2C5A007A14DE /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				B138815826CC2C70007A14DE /* CharacterList */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		B138815826CC2C70007A14DE /* CharacterList */ = {
+			isa = PBXGroup;
+			children = (
+				B138815A26CC2C7D007A14DE /* Data */,
+				B138815B26CC2C80007A14DE /* Domain */,
+				B138815926CC2C79007A14DE /* View */,
+			);
+			path = CharacterList;
+			sourceTree = "<group>";
+		};
+		B138815926CC2C79007A14DE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B1DC417426CA8D5D006199F6 /* ViewController.swift */,
+				B138814F26CC2BD7007A14DE /* CharacterCell.swift */,
+				B138815D26CC2DA5007A14DE /* CharacterListAdapter.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B138815A26CC2C7D007A14DE /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B138815F26CC2F1A007A14DE /* Services */,
+				B138815C26CC2C9A007A14DE /* Model */,
+				B138816526CC323B007A14DE /* CharacterRepository.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		B138815B26CC2C80007A14DE /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				B138816226CC310F007A14DE /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		B138815C26CC2C9A007A14DE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B138815126CC2C03007A14DE /* Response.swift */,
+				B138815326CC2C1F007A14DE /* Info.swift */,
+				B138815526CC2C37007A14DE /* Character.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B138815F26CC2F1A007A14DE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B138816026CC2F25007A14DE /* CharactersService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B138816226CC310F007A14DE /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				B138816326CC3120007A14DE /* FetchCharactersUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
 		B1DC416426CA8D5D006199F6 = {
 			isa = PBXGroup;
 			children = (
@@ -56,9 +144,9 @@
 		B1DC416F26CA8D5D006199F6 /* RickAndMorty */ = {
 			isa = PBXGroup;
 			children = (
+				B138815726CC2C5A007A14DE /* Scenes */,
 				B1DC417026CA8D5D006199F6 /* AppDelegate.swift */,
 				B1DC417226CA8D5D006199F6 /* SceneDelegate.swift */,
-				B1DC417426CA8D5D006199F6 /* ViewController.swift */,
 				B1DC417626CA8D5D006199F6 /* Main.storyboard */,
 				B1DC417926CA8D5E006199F6 /* Assets.xcassets */,
 				B1DC417B26CA8D5E006199F6 /* LaunchScreen.storyboard */,
@@ -139,7 +227,15 @@
 			files = (
 				B1DC417526CA8D5D006199F6 /* ViewController.swift in Sources */,
 				B1DC417126CA8D5D006199F6 /* AppDelegate.swift in Sources */,
+				B138815626CC2C37007A14DE /* Character.swift in Sources */,
 				B1DC417326CA8D5D006199F6 /* SceneDelegate.swift in Sources */,
+				B138815426CC2C1F007A14DE /* Info.swift in Sources */,
+				B138816626CC323B007A14DE /* CharacterRepository.swift in Sources */,
+				B138815026CC2BD7007A14DE /* CharacterCell.swift in Sources */,
+				B138816426CC3120007A14DE /* FetchCharactersUseCase.swift in Sources */,
+				B138815226CC2C03007A14DE /* Response.swift in Sources */,
+				B138816126CC2F25007A14DE /* CharactersService.swift in Sources */,
+				B138815E26CC2DA5007A14DE /* CharacterListAdapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
